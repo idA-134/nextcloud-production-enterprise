@@ -1,0 +1,63 @@
+# Git Ignore - Production Environment
+
+# Umgebungsvariablen (enthält sensible Daten!)
+.env
+
+# SSL-Zertifikate
+ssl/
+*.pem
+*.key
+*.crt
+
+# Backups (zu groß für Git)
+backups/
+*.sql
+*.sql.gz
+*.tar.gz
+*.zip
+
+# Logs
+*.log
+logs/
+
+# Docker Volumes
+volumes/
+
+# Temporary Files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Monitoring Daten
+monitoring/grafana_data/
+monitoring/prometheus_data/
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Node.js (falls verwendet)
+node_modules/
+
+# Lokale Konfigurationen
+config/local/
+*.local
+
+# Zertifikat-Anfragen
+*.csr

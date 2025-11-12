@@ -1,0 +1,34 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Prometheus selbst
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Node Exporter (Server Metriken)
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node_exporter:9100']
+
+  # cAdvisor (Container Metriken)
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  # PostgreSQL (wenn Exporter aktiviert)
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres_exporter:9187']
+
+  # Redis (wenn Exporter aktiviert)
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis_exporter:9121']
+
+  # Nginx (wenn Exporter aktiviert)
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx_exporter:9113']
